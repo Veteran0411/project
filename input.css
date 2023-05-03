@@ -1,0 +1,129 @@
+/* google font import link */
+
+  @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Bruno Ace SC', cursive;
+
+}
+body{
+    display: flex;
+    background-color: white;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 1px;
+ 
+}
+html {
+
+    font-size: 62.5%;
+}
+.card{
+position: relative;
+max-width: 470px;
+width: 100%;
+background: #865DFF;  /* dark pallete :443C68   393053  18122B*/
+padding: 20px 30px 80px;
+border-radius: 12px;
+box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+overflow: hidden;
+}
+.card form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 30px;
+}
+.form header{
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+}
+form input{
+    height: 60px;
+    font-size: 1.4rem;
+    padding: 0 12px;
+    border-radius: 12px;
+    border: none;
+    caret-color: #865DFF;
+    transition: all 0.3s;
+}
+form input:focus{
+    border: 1px solid #865DFF;
+    transform: scale(1.02);
+}
+
+form label{
+    font-size: 1.6rem;
+    color: white;
+    font-weight: bold;
+}
+form input[type="submit"]{
+    padding: none;
+    font-size: 1.8rem;
+    font-weight: 800;
+    cursor: pointer;
+    margin-top: 3rem;
+    color: #865DFF;
+    transition: all 0.3s;
+}
+form input[type="submit"]:hover{
+transform: scale(1.02);
+}
+
+.form-register{
+    background-color: rgb(255, 255, 255);
+    position:absolute;
+    padding: 1rem 9rem;
+    width: calc(100% + 120px);
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 100%;
+    transition: all 1s;
+    bottom: -70%;
+}
+.form-register header{
+color: #865DFF;
+text-decoration: underline;
+cursor: pointer;
+}
+.form-register label{
+    color: #865DFF;
+}
+.form-register input{
+    border: 1px solid #865DFF;
+    align-content: center;
+    justify-content: center;
+}
+.form-register input[type="submit"]{
+background-color: #865DFF;
+padding: 0 10rem;
+color: white;
+}
+.form-register .form-group{
+    visibility: hidden;
+    opacity: 0;
+}
+ .active .form-register{
+    bottom: 0%;
+    border-radius: 30px;
+}
+.active .form-register .form-group{
+    visibility: visible;
+    opacity: 1;
+}
+@media screen and (max-width:760px) {
+    html{
+        font-size:45% ;
+        font-weight: 700;
+    }
+    
+}

@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Castoro+Titling&family=IBM+Plex+Sans:wght@600&family=Prompt&family=Raleway&display=swap" rel="stylesheet">
+  <style>
+    *{
+        font-family: 'Raleway', sans-serif;
+    }
+body{
+  padding: 2rem;
+  /* font-family: 'Castoro Titling'; */
+ 
+  /* background-image: radial-gradient(circle, #b0bfd4, #848fa7, #5d627c, #383852, #18122b); */
+}
+
+    .row{
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(20%,1fr));
+      place-items: center;
+      margin: 0px 20px;
+      row-gap: 4rem;
+      column-gap: 2rem;
+    }
+    .row .tile{
+      text-align: center;
+      width: 18rem; /* changed 25*/
+      height: 14rem;  /* changed 21*/
+      word-break: break-all;
+      padding: 1.5rem;
+      cursor: pointer;
+  /* box-sizing: border-box; */
+      justify-content: center;
+      align-items: center;
+      border-radius: 30px;
+      background-color: #18122b;
+      display: flex;
+      transition: all 0.4s;
+    }
+    .row .tile:hover{
+      transform: scale(1.03);
+    }
+
+   .row .tile .tile-bio{
+      display: flex;
+      flex-direction: column;
+    width: 9rem;
+    margin-right: 0.8rem;
+    border-radius: 30px;
+    height: 14rem;
+      /* center */
+      gap: 0.8rem;
+    }
+    .row .tile .tile-bio .name{
+      padding: 0.2rem;
+      box-sizing: border-box;
+      /* font-weight: 700; */
+      border-radius: 30px;
+      font-size: 0.8rem;
+    width: 9rem;
+    height: 14rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(248, 248, 248);
+    
+    }
+   .row .tile .tile-bio .usn{
+    padding: 0.3rem;
+    border-radius: 30px;
+      box-sizing: border-box;
+      text-align: center;
+      font-size: 0.8rem;
+    width: 9rem;
+    height: 14rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(255, 255, 255);
+    
+    }
+ 
+  .row .tile .tile-info{
+    width: 9rem;
+    height: 14rem;
+    
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  .row .tile .tile-info .email{
+    padding: 0.2rem;
+    border-radius: 30px;
+      box-sizing: border-box;
+      text-align: center;
+      font-weight: 600;
+    width: 9rem;
+    height: 7rem;
+    font-size: 0.7rem;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    background-color: white;
+  }
+  .row .tile .tile-info .email h4{
+    font-size: 0.7rem;
+  }
+  .row .tile .tile-info .phoneNum{
+    width: 9rem;
+    padding: 0.3rem;
+    border-radius: 30px;
+      box-sizing: border-box;
+      text-align: center;
+    height: 7rem;
+    display: flex;
+    flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    background-color: white;
+    font-size: 0.8rem;
+  }
+
+  .fixed{
+    position: sticky;
+    z-index: 999;
+    top: 20px;
+    width: 100%;
+    justify-content: space-between;
+    height: 30px;
+    /* background-color: black; */
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background-color: white;
+    
+    padding: 0.7rem;
+    border-radius: 30px;
+
+  }
+  .fixed .instructions{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  #notRegistered .tileNumbers{
+    background-color: #ED2B2A;
+  }
+  #notRegistered .tile-bio .usn:hover{
+    background-color: #ED2B2A;
+    /* background-color:rgba(rgb(53, 48, 48), green, blue, alpha)     */
+    color: white;
+  }
+  #notRegistered .tile-bio .name:hover{
+    background-color: #ED2B2A;
+    /* background-color:rgba(rgb(53, 48, 48), green, blue, alpha)     */
+    color: white;
+  }
+  #notRegistered .tile-info .email:hover{
+    background-color: #ED2B2A;
+    /* background-color:rgba(rgb(53, 48, 48), green, blue, alpha)     */
+    color: white;
+  }
+  #notRegistered .tile-info .phoneNum:hover{
+    background-color: #ED2B2A;
+    /* background-color:rgba(rgb(53, 48, 48), green, blue, alpha)     */
+    color: white;
+  }
+
+  .row .tile .tile-bio .usn:hover{
+    background-color: rgba(18, 19, 25, 0.3);
+    /* background-color:rgba(rgb(53, 48, 48), green, blue, alpha)     */
+    color: white;
+  }
+  .row .tile .tile-bio .name:hover{
+    background-color: rgba(18, 19, 25, 0.3);
+    /* background-color:rgba(rgb(53, 48, 48), green, blue, alpha)     */
+    color: white;
+  }
+  .row .tile .tile-info .email:hover{
+    background-color: rgba(18, 19, 25, 0.3);
+    /* background-color:rgba(rgb(53, 48, 48), green, blue, alpha)     */
+    color: white;
+  }
+  .row .tile .tile-info .phoneNum:hover{
+    background-color: rgba(18, 19, 25, 0.3);
+    /* background-color:rgba(rgb(53, 48, 48), green, blue, alpha)     */
+    color: white;
+  }
+.row .tile .tile-bio h3,.row .tile .tile-info h3{
+  text-decoration: underline;
+}
+.row .tile .tileNumbers{
+  width: 60px;
+  height: 60px;
+  background-color: #18122B;
+  position: absolute;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  font-weight: 900;
+}
+.searchSort{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+@media (max-width:700px) {
+  body{
+    overflow-x: hidden;
+  }
+  *{
+
+    font-size: 0.75rem;
+  }
+  
+  
+  .fixed{
+flex-direction: row-reverse;
+  }
+  .fixed .instructions{
+    flex-direction: column;
+    display: none;
+  }
+  .row{
+  grid-template-columns: repeat(auto-fit,minmax(60%,1fr));
+  }
+  .row .tile .tile-info .email h4{
+    font-size: 0.75rem;
+  }
+
+
+  /* .row .tile{
+    padding: 2rem;5
+    margin-right: 8rem;
+  } */
+}
+@media (max-width:900px) and (min-width:700px) {
+  .row{
+  grid-template-columns: repeat(2,minmax(40%,1fr));
+  }
+}
+@media (max-width:1030px) and (min-width:900px) {
+  .row{
+  grid-template-columns: repeat(3,minmax(40%,1fr));
+  }
+}
+
+
+  </style>
+</head>
+<body>
+
+  <div class="fixed">
+    
+    <div class="instructions">
+    <div class="redColor" style="width: 1.5rem;height: 1.5rem;background-color: #18122B;border-radius: 100%;display: inline-block;"></div>
+    <h3 style="font-size: 0.75rem; ">Registered</h3>
+
+    <div class="redColor" style="width: 1.5rem;height: 1.5rem;background-color: #ED2B2A;border-radius: 100%;display: inline-block;"></div>
+    <h3 style="font-size: 0.75
+    rem;">Not Registered</h3>
+    </div>
+
+    <div class="searchSort" style="border: 3px solid #18122B;padding: 8px;border-radius: 10px;background-color: #18122B;color: white;">
+      <label for="searchbar" style="font-weight: 700;">Search</label>
+      <input type="search" id="searchbar" style="padding:7px;border-radius: 15px;">
+    </div>
+
+  </div>
+
+  <section class="box">
+
+    <div class="row">
+
+      <div class="tile">
+        
+        <div class="tile-bio">
+          <div class="name">
+            <h3>Name</h3>
+            <h4>Somling</h4>
+          </div>
+          <div class="usn">
+            <h3>USN</h3>
+            <h4>2gi21cs160</h4>
+          </div>
+        </div>
+
+        <div class="tile-info">
+          <div class="email">
+            <h3>E mail</h3>
+          <h4>  somlinghajji@gmail.com</h4>
+          </div>
+          <div class="phoneNum">
+            <h3>Phone No:</h3>
+           <h4> 8310306752</h4>
+          </div>
+        </div>
+
+        <div class="tileNumbers">1</div>
+
+      </div>
+
+      <div class="tile">
+        
+        <div class="tile-bio">
+          <div class="name">
+            <h3>Name</h3>
+            <h4>Somling</h4>
+          </div>
+          <div class="usn">
+            <h3>USN</h3>
+            <h4>2gi21cs160</h4>
+          </div>
+        </div>
+
+        <div class="tile-info">
+          <div class="email">
+            <h3>E mail</h3>
+          <h4>  somlinghajji@gmail.com</h4>
+          </div>
+          <div class="phoneNum">
+            <h3>Phone No:</h3>
+           <h4> 8310306752</h4>
+          </div>
+        </div>
+
+        <div class="tileNumbers">2</div>
+      </div>
+
+      <div class="tile">
+        
+        <div class="tile-bio">
+          <div class="name">
+            <h3>Name</h3>
+            <h4>Somling</h4>
+          </div>
+          <div class="usn">
+            <h3>USN</h3>
+            <h4>2gi21cs160</h4>
+          </div>
+        </div>
+
+        <div class="tile-info">
+          <div class="email">
+            <h3>E mail</h3>
+          <h4>  somlinghajji@gmail.com</h4>
+          </div>
+          <div class="phoneNum">
+            <h3>Phone No:</h3>
+           <h4> 8310306752</h4>
+          </div>
+        </div>
+
+        <div class="tileNumbers">3</div>
+      </div>
+
+      <div class="tile">
+        
+        <div class="tile-bio">
+          <div class="name">
+            <h3>Name</h3>
+            <h4>Somling</h4>
+          </div>
+          <div class="usn">
+            <h3>USN</h3>
+            <h4>2gi21cs160</h4>
+          </div>
+        </div>
+
+        <div class="tile-info">
+          <div class="email">
+            <h3>E mail</h3>
+          <h4>  somlinghajji@gmail.com</h4>
+          </div>
+          <div class="phoneNum">
+            <h3>Phone No:</h3>
+           <h4> 8310306752</h4>
+          </div>
+        </div>
+        
+        <div class="tileNumbers">4</div>
+      </div>
+
+      <div class="tile" style="background-color: #ED2B2A;" id="notRegistered">
+        
+        <div class="tile-bio">
+          <div class="name">
+            <h3>Name</h3>
+            <h4>Somling</h4>
+          </div>
+          <div class="usn">
+            <h3>USN</h3>
+            <h4>2gi21cs160</h4>
+          </div>
+        </div>
+
+        <div class="tile-info">
+          <div class="email">
+            <h3>E mail</h3>
+          <h4>  somlinghajji@gmail.com</h4>
+          </div>
+          <div class="phoneNum">
+            <h3>Phone No:</h3>
+           <h4> 8310306752</h4>
+          </div>
+        </div>
+
+        <div class="tileNumbers">5</div>
+      </div>
+
+
+      <div class="tile">
+        
+        <div class="tile-bio">
+          <div class="name">
+            <h3>Name</h3>
+            <h4>Somling</h4>
+          </div>
+          <div class="usn">
+            <h3>USN</h3>
+            <h4>2gi21cs160</h4>
+          </div>
+        </div>
+
+        <div class="tile-info">
+          <div class="email">
+            <h3>E mail</h3>
+          <h4>  somlinghajji@gmail.com</h4>
+          </div>
+          <div class="phoneNum">
+            <h3>Phone No:</h3>
+           <h4> 8310306752</h4>
+          </div>
+        </div>
+
+        <div class="tileNumbers">6</div>
+
+      </div>
+
+      <div class="tile">
+        
+        <div class="tile-bio">
+          <div class="name">
+            <h3>Name</h3>
+            <h4>Somling</h4>
+          </div>
+          <div class="usn">
+            <h3>USN</h3>
+            <h4>2gi21cs160</h4>
+          </div>
+        </div>
+
+        <div class="tile-info">
+          <div class="email">
+            <h3>E mail</h3>
+          <h4>  somlinghajji@gmail.com</h4>
+          </div>
+          <div class="phoneNum">
+            <h3>Phone No:</h3>
+           <h4> 8310306752</h4>
+          </div>
+        </div>
+
+        <div class="tileNumbers">7</div>
+
+      </div>
+
+      <div class="tile">
+        
+        <div class="tile-bio">
+          <div class="name">
+            <h3>Name</h3>
+            <h4>Somling</h4>
+          </div>
+          <div class="usn">
+            <h3>USN</h3>
+            <h4>2gi21cs160</h4>
+          </div>
+        </div>
+
+        <div class="tile-info">
+          <div class="email">
+            <h3>E mail</h3>
+          <h4>  somlinghajji@gmail.com</h4>
+          </div>
+          <div class="phoneNum">
+            <h3>Phone No:</h3>
+           <h4> 8310306752</h4>
+          </div>
+        </div>
+
+        <div class="tileNumbers">8</div>
+
+      </div>
+
+      <div class="tile">
+        
+        <div class="tile-bio">
+          <div class="name">
+            <h3>Name</h3>
+            <h4>Somling</h4>
+          </div>
+          <div class="usn">
+            <h3>USN</h3>
+            <h4>2gi21cs160</h4>
+          </div>
+        </div>
+
+        <div class="tile-info">
+          <div class="email">
+            <h3>E mail</h3>
+          <h4>  somlinghajji@gmail.com</h4>
+          </div>
+          <div class="phoneNum">
+            <h3>Phone No:</h3>
+           <h4> 8310306752</h4>
+          </div>
+        </div>
+
+        <div class="tileNumbers">9</div>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+</body>
+</html>

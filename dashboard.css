@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Raleway:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+.header{
+    height: 5vh;
+    text-align: center;
+    position: sticky;
+    z-index: 999;
+    top: 0;
+}
+.header-text{
+    font-size: 3rem;
+    padding: 2rem 0;
+   color:white;
+   background-color: #18122b;
+    /* color: black; */
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+
+.footer{
+width: 100%;
+
+   color: white;
+    font-size: 1.5rem;
+    bottom: 0;
+    position: sticky;
+    text-align: center;
+    position: absolute;
+    background-color: #18122b;
+    padding: 1.5rem 0;
+}
+.datasheet{
+    position: relative;
+    height: 85vh;
+    /* background-color: red; */
+    overflow-y: scroll;
+}
+body{
+    /* background-image: radial-gradient(circle, #b0bfd4, #848fa7, #5d627c, #383852, #18122b); */
+}
+
+.heading{
+    position: sticky;
+    margin-top: 80px;
+  
+}
+.table-container{
+    padding: 0 10%;
+    margin: 40px auto 0;
+    
+}
+.table{
+    border-radius: 30px;
+    width: 100%;
+    position: relative;
+    top: 150px;
+    background-color: white;
+    cursor: pointer;
+    border-collapse: collapse;
+}
+.table thead{
+    background-color: #18122b;
+    margin-bottom: 2rem;
+    position: sticky;
+    top: 180px;
+    left: 0;
+}
+
+.table tbody{
+    height: 400px;
+    /* background-color: red; */
+    /* overflow-y: scroll; */
+    /* position: relative; */
+}
+/* above line is not working in desktop mode */
+
+.table thead tr th{
+    font-size: 1.7rem;
+    color: white;
+    font-weight: 600;
+    padding: 1rem;
+    letter-spacing: 0.5px;
+    vertical-align: top;
+    border: 1px solid white;
+    border-radius: 10px;
+    cursor: pointer;
+
+}
+.table tbody{
+    height: 70vh;
+
+    background-color: rgb(255, 255, 255);
+}
+.table tbody tr td{
+    font-size: 1.4rem;
+    letter-spacing: 0.4px;
+    font-weight: 500;
+    color: #000000;
+    background-color: #DFDFDE;
+   
+    text-align: center;
+    padding: 0.8rem;
+}
+.table tbody tr{
+    border-radius: 30px;
+}
+tbody tr td{
+    margin-bottom: 30px;
+}
+/* .table.table tbody tr:nth-child(even) td{
+
+    background-color: #18122b;
+    color: white;
+   
+} */
+.table.table tbody tr:hover td{  /*nth child odd or even with tr*/
+ background-color: #D0C9C0;
+   
+}
+.Table-header{
+    position: fixed;
+    top: 120px;
+    display:flex;
+    justify-content: space-between;
+    font-size: 2rem;
+    font-weight: 600;
+    padding-top: 1rem ;
+    margin-bottom: 1.3rem;
+    padding-bottom: 0.6rem;
+    z-index: 998;
+    display: block;
+    background-color: white;
+    width: 100%;
+}
+@media (max-width:768px) {
+    .Table-header{
+       
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+    }
+    .tHeaderText{
+        font-size: 1.4rem;
+    }
+    .table{
+        top: 40px;
+        margin-top: 150px;
+    }
+    .heading{
+        margin-bottom: 20px;
+    }
+    .table thead{
+        display: none;
+    }
+    .table, .table tbody,.table tr,.table td{
+        display: block;
+        width: 100%;
+    }
+    .table tbody tr{
+        border: 1px solid #18122b;
+    }
+    .table tr{
+        margin-bottom: 1rem;
+        border-radius: 40px;
+    }
+    .table{
+        color: #000000;
+        font-weight: 800;
+    }
+    .table tbody tr td{
+        text-align: right;
+        word-break: break-all;
+        /* border:1px solid #18122b; */
+        color: black;
+        font-weight: bolder;
+        font-size: 1.1rem;
+        padding-left: 10%;
+        position: relative;
+    }
+    .table td:before{
+        content: attr(data-label); /* with help of the attr() we can insert any text before or after the element*/
+        position: absolute;
+        left: 0;
+        /* background-color: #18122b; */
+        width: 40%;
+        padding: 0.6rem;
+        border-radius: 20px;
+        box-sizing: border-box;
+        color: rgb(0, 0, 0);
+       font-weight: bolder;
+       text-align: left;
+        padding-left: 15px;
+    }
+    #extraTableRow{
+        display: none;
+    }
+}

@@ -171,7 +171,7 @@ top: 40px;
 /* box-sizing: border-box; */
     justify-content: center;
     align-items: center;
-    border-radius: 30px;
+    border-radius: 10px;
     /* background-color: #18122b; */
     background-color: rgba(17, 36, 88, 0.7);
     opacity: 0.7;
@@ -180,7 +180,14 @@ top: 40px;
   }
   .row .tile:hover{
     transform: scale(1.03);
-    background-color: #18122B;
+    /* background-color: #00ff62d7; */
+    background-image: linear-gradient(to right top, #00ff09, #00ff60, #00ff8d, #1affb0, #54ffcb, #5bffcd, #62fecf, #68fed1, #4bfdbe, #2ffba7, #12f88d, #00f56f);
+
+    border: 3px solid #18122B;
+    opacity: 1;
+  }
+  .row .notTile:hover{
+    background-image: linear-gradient(to right top, #ff2800, #ff4c23, #ff653d, #ff7b55, #ff8f6d, #ff906e, #ff906e, #ff916f, #fe7f57, #fc6c40, #f95826, #f54000);
     opacity: 1;
   }
 
@@ -311,13 +318,21 @@ padding: 6rem 6rem;
    
     padding: 0.1rem;
     /* box-sizing: border-box; */
-    background-color: #ffffff;
-    border-radius: 30px;
+     /*this was white bg color*/
+     /* background-image: linear-gradient(to bottom, #0bdd5d, #00e684, #00eea6, #00f5c5, #19fbdf);  parrot green */
+     /* background-image: linear-gradient(to bottom, #02ff7f, #00fca0, #00f9bb, #34f4cf, #61eedc); */
+     /* below one 3 colors */
+     background-image: linear-gradient(to right top, #00ff09, #00ff60, #00ff8d, #1affb0, #54ffcb, #5bffcd, #62fecf, #68fed1, #4bfdbe, #2ffba7, #12f88d, #00f56f);
+    border-radius: 10px;
+    border: 2px solid #18122B;
+    font-weight: 800;
 }
 
-/* .tile-proto:nth-child(even):hover{
-background-color: red;
-} */
+.notregistered{
+   background-image: linear-gradient(to right top, #ff2800, #ff4c23, #ff653d, #ff7b55, #ff8f6d, #ff906e, #ff906e, #ff916f, #fe7f57, #fc6c40, #f95826, #f54000);
+}
+
+
 .tile-proto .tile-proto-info table tr{
     margin-top: 40px;
 }

@@ -26,6 +26,10 @@ footer {
 /* =================================
 css for the search and sort menu
 =================================== */
+body{
+    /* tried to fill gap */
+    background-image: radial-gradient(circle, #b0bfd4, #848fa7, #5d627c, #383852, #18122b);
+}
 .main{
     overflow: hidden;
     padding: 1rem;
@@ -33,7 +37,7 @@ css for the search and sort menu
 .fixed{
     position: relative;
     z-index: 888;
-    /* top: 2vh; */
+    /* top: -7px; */
     width: 100%;
     justify-content: space-between;
     height: 3rem;
@@ -192,7 +196,8 @@ body{
 }
 .fixed{
     position: fixed;
-    top: 6vh;
+    padding: 10px 0;
+    top: 4.8vh;
     border-radius: 0px;
     left: 0;
     flex-direction: column;
@@ -272,8 +277,7 @@ box-sizing: border-box;
 
 .fixed{
     position: fixed;
-    top: 6.5vh;
-    left: 0;
+    top: 4.8vh;
     flex-direction: column;
 }
 .sort{ 
@@ -286,6 +290,7 @@ box-sizing: border-box;
 @media (max-width:1030px) and (min-width:900px) {
 .row{
 grid-template-columns: repeat(3,minmax(40%,1fr));
+padding: 6rem 6rem;
 }
 
 .fixed{
@@ -309,6 +314,10 @@ grid-template-columns: repeat(3,minmax(40%,1fr));
     background-color: #ffffff;
     border-radius: 30px;
 }
+
+/* .tile-proto:nth-child(even):hover{
+background-color: red;
+} */
 .tile-proto .tile-proto-info table tr{
     margin-top: 40px;
 }

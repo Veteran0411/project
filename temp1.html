@@ -34,42 +34,28 @@
     <section class="card" style="background-color: #18122B;border-radius: 30px;">
 
         <div class="form form-login">
-            <header>Log In</header>
+            <header id="loginHeader">Log In</header>
             <form action="" class="form-group">
                 <label for="user">User Id:</label >
                 
                 <input type="text" placeholder="Enter your User Id" id="user">
                 
-                <label for="pass">Password:</label>
+                <label for="pass" id="passName">Password:</label>
                 
                 <input type="password" placeholder="Enter your Password" id="pass">
                 
                 <input type="submit" value="Submit">
             </form>
-        </div>
-
+          
+            <header title="Click here to Register" id="registerHeader" >Register </header>
          
-        <div class="form form-register">
-            <header title="Click here to Register">Register</header>
-            <form action="" class="form-group">
-                <label for="user">User Id:</label>
-                
-                <input type="text" placeholder="Enter your User Id: " id="user">
-                
-                <!-- <label for="pass">Password:</label>
-                
-                <input type="password" placeholder="Enter your Password: " id="pass"> -->
-                
-                <input type="submit" value="Register">
-            </form>
+
         </div>
-        <div class="registerText" >
-            &nbsp;&nbsp;&nbsp; Register if you're new . 
-         </div>
+        <div class="background"></div>
     </section>
     <br>
     <br>
-
+    
 
         
         </div>
@@ -88,16 +74,25 @@
 
             // alert("Register if you are new.");
             const card=document.querySelector(".card");
-            const loginHeader=document.querySelector(".form-login header");
-            const RegisterHeader=document.querySelector(".form-register header");
+            const loginHeader=document.querySelector("#loginHeader");
+            const RegisterHeader=document.querySelector("#registerHeader");
+            var login=1;
     
             RegisterHeader.addEventListener('click',()=>{
-                card.classList.add("active");
+                if(login===1){
+                    card.classList.add("active");
+                    document.getElementById("loginHeader").innerHTML="Register";
+                    document.getElementById("registerHeader").innerHTML="Login";
+                    login=0;
+                }else{
+                    card.classList.remove("active");
+                    document.getElementById("loginHeader").innerHTML="Login";
+                    document.getElementById("registerHeader").innerHTML="Register";
+                    login=1;
+                }
             })
     
-            loginHeader.addEventListener('click',()=>{
-                card.classList.remove("active");
-            })
+
         </script>
 </body>
 

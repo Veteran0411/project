@@ -48,16 +48,18 @@ html {
 .card{
     position: absolute;
     top: 50%;
+    overflow: hidden;
     left: 50%;
     transform: translate(-50%,-50%);
     max-width: 470px;
     width: 100%;
     background: #121212 ;  /* dark pallete :443C68   393053  18122B  og(865DFF)*/
     padding: 20px 30px 80px;
+    transition: all 0.3s;
     border-radius: 12px;
     box-shadow: 100px 50px 100px rgba(248, 244, 244, 0.3);
     /* background: url("https://e0.pxfuel.com/wallpapers/403/677/desktop-wallpaper-blue-minimalist-mountain-range-vaporwave-minimalist-forest-neon-purple-mountain.jpg"); */
-    overflow: hidden;
+    /* overflow: hidden; */
     
     }
     .card form{
@@ -69,19 +71,30 @@ html {
     }
     .form header{
         text-align: center;
-        font-size: 3rem;
+        font-size: 3.2rem;
         font-weight: 700;
         color: rgb(255, 255, 255);
         cursor: pointer;
     }
+.active .form-group label{
+    color: #18122B;
+    
+}
+.active .form-group input{
+  
+    border: 2px solid #18122B;
+}
+
     form input{
-        height: 60px;
+        height: 40px;
         font-size: 1.4rem;
         padding: 0 12px;
+        box-sizing: border-box;
         border-radius: 12px;
         border: none;
+        font-weight: 900;
         caret-color: #18122B ;
-    
+        width: 100%;
         transition: all 0.3s;
     }
     form input:focus{
@@ -98,8 +111,11 @@ html {
     }
     form input[type="submit"]{
         padding: none;
-        font-size: 1.8rem;
+        font-size: 1.5rem;
+        height: 40px;
         font-weight: 800;
+        width: 50%;
+        margin: auto;
         cursor: pointer;
         margin-top: 3rem;
         color: #18122B ;
@@ -108,67 +124,90 @@ html {
     form input[type="submit"]:hover{
     transform: scale(1.02);
     }
-    
-    .form-register{
-        background-color: rgb(255, 255, 255);
-        position:absolute;
-        padding: 1rem 9rem;
-        width: calc(100% + 120px);
-        left: 50%;
-        transform: translateX(-50%);
-        border-radius: 100%;
-        box-shadow: 10px 15px 50px rgba(0, 0, 0, 0.5);
-        transition: all 1s;
-        bottom: -45%;
+    form input[type="password"]{
+        transition: all 0.3s;
     }
-    .form-register header{
-    color: #18122B ;
-    text-decoration: underline;
-    cursor: pointer;
-    }
-    .form-register label{
-        color: #18122B ;
-    }
-    .form-register input{
-        border: 1px solid #18122B ;
-        align-content: center;
-        justify-content: center;
-    }
-    .form-register input[type="submit"]{
-    background-color: #18122B ;
-    padding: 0 10rem;
-    color: white;
-    }
-    .form-register .form-group{
-        visibility: hidden;
-        opacity: 0;
-    }
+
      .active .form-register{
         bottom: 20%;
         border-radius: 30px;
     }
-    .registerText{
-        font-weight: 800; 
-        font-size: 1.5rem;
-        text-align: center;
-        text-decoration: underrline;
+    #loginHeader{
+        text-decoration: underline;
+        color: white;
+        width: 100%;
+     
+        margin: auto;
+        border-radius: 10px;
+        
+    }
+    .active #registerHeader{
+        color: white;
+    }
+    #registerHeader{
         position: absolute;
-        top: 490px;
-        left:130px;
-        color: #18122b;
-
+        padding-left: 15rem;
+        font-size: 2.3rem;
+        color: #18122B;
+        margin-top: 4rem;
     }
     
     /*  karthik bro tol to change */
-    .active .form-login input,.active .form-login label{
-        visibility: hidden;
+    .active {
+        padding: 20px 30px 80px;
+   
     }
-    
-    /**/
-    .active .form-register .form-group{
+    .active input[type="text"],.active label{
+        transform: translateY(20px);
+        transition: all 0.3s;
+    }
+    .active form input[type="submit"]{
+        position: relative;
+        transition: all 0.3s;
+        transform: translateY(-60px);
+        opacity: 1;
+        margin: auto;
+
+
+    }
+    /* .active header{
+        transition: all 0.3s;
+        transform: translateY(-390px);
+    } */
+    .active .form-login input[type="password"],.active .form-login #passName{
+        visibility: hidden;
+        opacity: 0;
+    }
+    .background{
+        top: 400px;
+        position: absolute;
+        width: 470px;
+        left: 0px;
+        border-radius: 15%;
+        z-index: -2;
+        height: 300px;
+        background-color: rgb(255, 255, 255);
+        transition: all 0.5s;
+    }
+    .active .background{
+        top: 80px;
+        left: -1px;
+        border-radius: 0;
         visibility: visible;
         opacity: 1;
+        position: absolute;
+        z-index: -2;
+        width: 480px;
+        height: 300px;
+        background-color: rgb(255, 255, 255);
     }
+    /* .active .form-login #loginHeader{
+        opacity:1;
+    } */
+
+    
+    /**/
+ 
     @media screen and (max-width:760px) {
         html{
             font-size:55% ;
@@ -179,28 +218,53 @@ html {
             font-size: 5rem;
             font-weight: 900;
         }
+        .card{
+            max-width: 300px;
+        }
         .form{
             font-size: 1rem;
         }
-        .card{
-            max-width: 400px;
-            width: 100%;
+        .form header{
+            font-size: 3rem;
         }
-        .registerText{
-            font-weight: 800; 
-            font-size: 1.2rem;
-            top: 510px;
-            left: 120px;
-        }
-        .form-register header{
-            font-size: 4.4rem;
+        form input{
+            height: 36px;
+            font-size: 1.4rem;
+            border-radius: 10px;
+            padding: 0 15px;
+
         }
         form input[type="submit"]{
+            padding: none;
+            font-size: 1rem;
+            height: 30px;
+            margin-top: 1rem;
+
+        }
+        form .card{
+            max-width: 400px;
+            width: 100%;
+            padding: 10px 15px 80px;
+        }
+
+        #registerHeader{
             font-size: 2rem;
+        
+            padding-left: 9rem;
+        }
+        form input[type="submit"]{
+            font-size: 1.7rem;
         }
         footer{
             padding: 2;
             font-size: 1.5rem;
+        }
+        .background{
+            top: 350px;
+            width: 300px;
+        }
+        .active .background{
+        height: 200px;
         }
 
     }

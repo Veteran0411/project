@@ -6,16 +6,23 @@
 
 header {
     grid-row: 1 / 2;
+ 
+
 }
+
+
 
 .main {
     grid-row: 2 / 3;
     background-image: radial-gradient(circle, #b0bfd4, #848fa7, #5d627c, #383852, #18122b);
+
 }
 
 footer {
     grid-row: 3 / 4;
 }
+
+
 
 
 /* =======================
@@ -24,15 +31,20 @@ login page css
 
 @import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Castoro+Titling&display=swap');
 
+/* body{
+    /* tried to fill gap */
+    /* background-image: radial-gradient(circle, #b0bfd4, #848fa7, #5d627c, #383852, #18122b); */
+/* } */
 
-
-body{
+.main{
     overflow: hidden;
 }
+
 html {
 
     font-size: 62.5%;
 }
+
 .card{
     position: absolute;
     top: 50%;
@@ -162,6 +174,14 @@ html {
             font-size:55% ;
             font-weight: 700;
         }
+        .layout header{
+            padding: 2;
+            font-size: 5rem;
+            font-weight: 900;
+        }
+        .form{
+            font-size: 1rem;
+        }
         .card{
             max-width: 400px;
             width: 100%;
@@ -169,8 +189,18 @@ html {
         .registerText{
             font-weight: 800; 
             font-size: 1.2rem;
-            top: 475px;
-            
+            top: 510px;
+            left: 120px;
+        }
+        .form-register header{
+            font-size: 4.4rem;
+        }
+        form input[type="submit"]{
+            font-size: 2rem;
+        }
+        footer{
+            padding: 2;
+            font-size: 1.5rem;
         }
 
     }

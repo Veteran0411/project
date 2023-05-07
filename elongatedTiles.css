@@ -530,8 +530,10 @@ css for the block section ends here
 
 
 }
-@media (max-height:1020px) and (min-height:800px) {
+@media (max-height:1020px) and (min-height:800px) and (max-width:700px){
     .paginationTable{
         top: 8rem;
     }
 }
+
+/* above lines maintain paigination */

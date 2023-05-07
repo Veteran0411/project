@@ -1,0 +1,537 @@
+.layout {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+header {
+    grid-row: 1 / 2;
+ 
+
+}
+
+
+
+.main {
+    grid-row: 2 / 3;
+    background-image: radial-gradient(circle, #b0bfd4, #848fa7, #5d627c, #383852, #18122b);
+
+}
+
+footer {
+    grid-row: 3 / 4;
+}
+
+/*=============================
+  css veteran added
+  ===========================*/
+  .main{
+    overflow: hidden;
+}
+html {
+
+    font-size: 62.5%;
+}
+
+
+
+
+/* =================================
+css for the search and sort menu
+=================================== */
+
+body{
+    /* tried to fill gap */
+    /* background-image: radial-gradient(circle, #b0bfd4, #848fa7, #5d627c, #383852, #18122b); */
+}
+.main{
+    overflow: hidden;
+    padding: 1rem;
+}
+.fixed{
+    position: relative;
+    top: 60px;  /*if removed the bar will go behind*/
+    z-index: 888;
+    /* top: -7px; */
+    width: 100%;
+    justify-content: space-between;
+    height: 4.5rem;
+    /* background-color: black; */
+    /* margin-bottom: 1rem; */
+    display: flex;
+    align-items: center;
+    /* gap: 2rem; */
+    background-color: rgb(255, 255, 255);
+    box-sizing: border-box;
+    padding: 0.7rem;
+    border-radius: 15px;
+
+  }
+  .fixed .instructions{
+    display: flex;
+   
+    align-items: center;
+    gap: 2rem;
+  }
+  
+.filter{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    gap: 1.5rem;
+    width: 60%;
+}
+  .searchSort{
+    height: 23px;
+    display: flex;
+    cursor: pointer;
+    width: 300px;
+    gap: 12px;
+    padding: 3vh 15px;
+    background-color: #18122b;
+    border-radius: 30px;
+    align-items: center;
+    box-shadow: 0 5 20px rgba(0, 0, 0, 0.4);
+    /* transition: all 0.5s; */
+}
+
+.searchSort input{
+  font-size: 1.3rem;
+  letter-spacing: 0.5px;
+   border: none;
+ 
+   width: 250px;
+   background-color: transparent;
+   color: aliceblue;
+    outline: none;
+   font-weight: 900;
+   caret-color: aliceblue;
+}
+
+.searchSort a .fa-sharp{
+    color: white;
+ }
+ .sort{
+    font-size: 1.3rem;
+  width: 30%;
+  display: flex;
+   
+  align-items: center;
+
+
+ }
+ .sort p{
+  background-color: #18122B;
+  font-size: 2rem;
+  color: white;
+  width: 100px;
+  position: relative;
+  top: 7px;
+  padding:1.6rem;
+  border-radius: 10px;
+  height: 30px;
+ }
+ .sort p .fa-solid{
+    color: white;
+ }
+ .sort:hover .dropdown{
+  display: block;
+ }
+.sort .dropdown{
+position: absolute;
+width: 250px;
+top: 40px;
+  display: none;
+  list-style-type: none;
+  background-color: #18122B;
+  color: white;
+  padding: 1rem;
+  border-radius: 30px;
+  text-align: center;
+  box-sizing: border-box;
+}
+.sort .dropdown li{
+  padding: 0.4rem;
+  color: white;
+}
+.sort .dropdown li a{
+    padding: 0.4rem 5rem;
+    color: white;
+    width: 100%;
+  }
+.sort .dropdown li a:hover{
+  background-color: white;
+  border-radius: 30px;
+  color: #18122B;
+}
+.sort .dropdown li{
+  margin-bottom: 1rem;
+}
+/* =================================
+css for the search and sort menu completed 
+=================================== */
+
+
+/* =======================================
+ css for table view started here
+ ====================================== */
+
+ /* =================================
+css for the block section starts here 
+=================================== */
+
+
+/* grid 5 display */
+
+.block{
+    position: relative;
+    top: 10rem;
+    padding: 0 1rem;
+    /* background-color: red; */
+
+}
+.row{
+    padding: 0 2rem;
+    display: grid;
+    grid-template-rows: repeat(auto-fit,minmax(15%,1fr));
+    place-items: center;
+    margin: 0px 20px;
+    row-gap: 1rem;
+   
+    /* column-gap: 5rem; */
+  }
+  .row .tile{
+    text-align: center;
+    width: 100%; /* changed 25  and then from 18 ,keep 16 to get 5 grid better layout and block padding 1rem x-axis*/
+    height: 35px;  /* changed 21 and then from 14  keep ,13 to get 5 grid better layout*/
+    word-break: break-all;
+  
+    cursor: pointer;
+/* box-sizing: border-box; */
+    justify-content: center;
+    align-items: center;
+    /* border-radius: 10px; */
+    /* background-color: #18122b; */
+    background-color: rgba(17, 36, 88, 0.7);
+    opacity: 0.7;
+    display: flex;
+    transition: all 0.4s;
+  }
+  .row .tile:hover{
+    transform: scale(1.03);
+    /* background-color: #00ff62d7; */
+    /* background-image: linear-gradient(to right top, #00ff09, #00ff60, #00ff8d, #1affb0, #54ffcb, #5bffcd, #62fecf, #68fed1, #4bfdbe, #2ffba7, #12f88d, #00f56f); */
+    background-color: #18122B;
+    border: 3px solid #18122B;
+    opacity: 1;
+  }
+  .row .notTile:hover{
+    /* check color of whole tile */
+    /* background-image: linear-gradient(to right top, #ff2800, #ff4c23, #ff653d, #ff7b55, #ff8f6d, #ff906e, #ff906e, #ff916f, #fe7f57, #fc6c40, #f95826, #f54000); */
+    background-color: #18122B;
+    opacity: 1;
+  }
+
+
+  /*========================
+   solo tile  new layout
+  =========================  */
+.tile-proto{
+    width: 100%;
+    height: 30px;
+   
+    padding: 0.4rem;
+    box-sizing: border-box;
+     /*this was white bg color*/
+     /* background-image: linear-gradient(to bottom, #0bdd5d, #00e684, #00eea6, #00f5c5, #19fbdf);  parrot green */
+     /* background-image: linear-gradient(to bottom, #02ff7f, #00fca0, #00f9bb, #34f4cf, #61eedc); */
+     /* below one 3 colors */
+     background-image: linear-gradient(to right top, #00ff09, #00ff60, #00ff8d, #1affb0, #54ffcb, #5bffcd, #62fecf, #68fed1, #4bfdbe, #2ffba7, #12f88d, #00f56f);
+    /* border-radius: 10px; */
+    border: 3px solid #18122B;
+    font-weight: 900;
+}
+
+.notregistered{
+   background-image: linear-gradient(to right top, #ff2800, #ff4c23, #ff653d, #ff7b55, #ff8f6d, #ff906e, #ff906e, #ff916f, #fe7f57, #fc6c40, #f95826, #f54000);
+}
+
+
+/* .tile-proto .tile-proto-info table tr{
+    margin-top: 40px;
+} */
+.tile-proto .tile-proto-info table tr td{
+    padding: 0.2rem 10rem;
+    vertical-align:top;
+    font-weight: 900;
+    font-size: 1.3rem;
+    box-sizing: border-box;
+}
+/* .tile-proto .tile-proto-info table tr td:nth-child(odd){
+    text-align: left;
+    font-size: 1.4rem;
+    font-weight: 900;
+}
+.tile-proto .tile-proto-info table tr td:nth-child(even){
+    /* text-align: right; */
+    /* font-size: 1.2rem; */
+    /* font-weight: 900; */
+    /* background-color: #18122B; */
+    
+/* }  */
+
+/* =================================
+css for the block section ends here 
+=================================== */
+
+/* =======================================
+ css for table view ends here
+ ====================================== */
+
+ /* =======================================
+ css for pagination starts here
+ ====================================== */
+
+.paginationTable{
+    height: 7rem;
+    display: flex;
+    font-size: 1.5rem;
+    /* background-color: #ffffff; */
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    top: 13rem;
+}
+
+ /* =======================================
+ css for pagination ends here
+ ====================================== */
+
+ 
+
+
+
+/*=============================
+  responsiveness css veteran added
+  ===========================*/
+
+  @media screen and (max-width:760px) {
+    html{
+        font-size:55% ;
+        font-weight: 700;
+    }
+    .layout header{
+        font-size: 5rem;
+        font-weight: 900;
+    }
+    .tile-proto .tile-proto-info table tr td{
+        padding: 0.2rem 0.8rem;
+        box-sizing: border-box;
+    }
+    .tile-proto{
+        padding: 0.1rem;
+    }
+    .tile-proto .tile-proto-info table tr td{
+        font-size: 0.8rem;
+    }
+    .tile-proto .tile-proto-info table tr td span{
+        font-size: 0.8rem;
+    }
+
+}
+
+
+@media (max-width:700px) {
+
+    *{
+    
+      font-size: 0.75rem;
+    }
+    .layout header{
+        font-size: 5rem;
+        font-weight: 900;
+    }
+    html{
+        font-size:55% ;
+        font-weight: 700;
+    }
+    .fixed{
+        position: fixed;
+        padding: 10px 0;
+        top: 50px;
+        border-radius: 0px;
+        left: 0;
+        flex-direction: column;
+    }
+    .sort{ 
+        flex-direction: column;
+       
+    }
+    
+    .sort p .fa-solid{
+        color: #18122B;
+       
+     }
+    .searchSort{
+        margin-top: 3px;
+        width: 210px;
+        background-color: white;
+    }
+    .searchSort input{
+        width: 170px;
+        padding: 2px 0px;
+        caret-color: black;
+        color: black;
+    }
+    .searchSort a .fa-sharp{
+        color: #18122B;
+        font-size: 1.2rem;
+     }
+     .filter{
+        position: absolute;
+        top: 40px;
+     }
+     .sort p{
+        background-color: #ffffff;
+            color: #18122B;
+         font-weight: 500;
+        width: 80px;
+        padding-left: 15px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        box-sizing: border-box;
+       }
+       .sort .dropdown{
+        width: 200px;
+       }
+       .sort .dropdown li a{
+        font-size: 1.5rem;
+       }
+       .sort .dropdown li a:hover{
+        font-size: 1.5rem;
+        color: #18122B;
+       }
+
+    .block{
+        top: 13rem;
+        position: relative;
+        margin-bottom: 10rem;
+    }
+    .row{
+    padding: 6rem 0rem;   /*padding and boxsizing added now*/
+    margin: auto auto;
+    box-sizing: border-box;
+    }
+    .row .tile{
+      
+      width: 100vw;
+      height: 30px;
+      /* margin-right: 8rem; */
+    }
+    .tile-proto{
+        width: 100%;
+        height: 28px;
+    }
+    .paginationTable{
+        top: -2rem;
+    }
+
+    
+    footer{
+        font-size: 1.5rem;
+        padding: 2rem;
+    }
+    .tile-proto .tile-proto-info table tr td{
+        padding: 0.2rem 0.7rem;
+        box-sizing: border-box;
+    }
+    .tile-proto .tile-proto-info table tr td{
+        font-size: 0.8rem;
+        font-weight: 900;
+    }
+    .tile-proto .tile-proto-info table tr td span{
+        font-size: 0.8rem;
+        font-weight: 900;
+    }
+    
+}
+
+
+@media (max-width:900px) and (min-width:700px) {
+   
+    .fixed{
+        position: fixed;
+        top: 60px;
+        flex-direction: column;
+    }
+
+
+    .sort{ 
+        flex-direction: column;
+    }
+    .row .tile{
+      
+        width: 100vw;
+        height: 30px;
+      }
+      .tile-proto{
+          width: 100%;
+          height: 28px;
+      }
+      .tile-proto .tile-proto-info table tr td{
+        padding: 0.2rem 1.2rem;
+        box-sizing: border-box;
+        font-weight: 900;
+        font-size: 0.8rem;
+    }
+    .tile-proto .tile-proto-info table tr td span{
+        font-size: 0.8rem;
+        font-weight: 900;
+    }
+    .block{
+        top: 15rem;
+    }
+    .paginationTable{
+        top: 15rem;
+    }
+
+}
+    
+    
+    
+    @media (max-width:1030px) and (min-width:900px) {
+
+    
+    .fixed{
+        position: fixed;
+
+        left: 0;
+        flex-direction: column;
+    }
+    .sort{ 
+        flex-direction: column;
+    }
+    .tile-proto .tile-proto-info table tr td{
+        font-size: 0.8rem;
+        font-weight: 900;
+        padding: 0.2rem 1.2rem;
+    }
+    .tile-proto .tile-proto-info table tr td span{
+        font-size: 0.8rem;
+    }
+    .block{
+        top: 13rem;
+    }
+    .paginationTable{
+        top: 13rem;
+    }
+
+
+}
+@media (max-height:1020px) and (min-height:800px) {
+    .paginationTable{
+        top: 8rem;
+    }
+}

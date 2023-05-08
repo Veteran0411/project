@@ -1,0 +1,279 @@
+.layout {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+header {
+    grid-row: 1 / 2;
+ 
+
+}
+
+
+
+.main {
+    grid-row: 2 / 3;
+    background-image: radial-gradient(circle, #b0bfd4, #848fa7, #5d627c, #383852, #18122b);
+
+}
+
+footer {
+    grid-row: 3 / 4;
+}
+
+/*=============================
+  css veteran added
+  ===========================*/
+  .main{
+    overflow: hidden;
+}
+html {
+
+    font-size: 62.5%;
+}
+body{
+    background-image: radial-gradient(circle, #b0bfd4, #848fa7, #5d627c, #383852, #18122b);
+}
+/*=============================
+  css for side panel starts here
+  ===========================*/
+
+  .side-panelSection{
+    position: fixed;
+    top: 6rem;
+    width: 25rem;
+    left: 0;
+    transition: all 0.2s ease;
+    z-index: 998;
+
+  }
+  .reducedSidePanelSection{
+    width: 5.5rem;
+    transition: all 0.2s ease;
+  }
+  .closeSidePanel{
+    transition: all 0.2s ease;
+  }
+
+  .side-panelSection .side-panel{
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+   
+    gap: 1rem;
+    background-color:#18122B;
+    height: 75vh; 
+    transition: all 0.2s ease;
+  
+}
+.side-panelSection .closeSidePanel{
+
+    width: 5.5rem;
+    transition: all 0.2s ease;
+ 
+}
+.side-panelSection .closeSidePanel .nav-text{
+    opacity: 0;
+    transition: all 0.2s ease;
+}
+
+.side-panelSection .side-panel .toggler{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    transition: all 0.2s ease;
+}
+.side-panelSection .side-panel .toggler i{
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.closeSidePanel .toggler span{
+    opacity: 0;
+    transition: all 0.2s ease;
+    visibility: hidden;
+}
+.side-panelSection .side-panel .toggler span{
+    font-size: 2.7rem;
+    color: white;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.side-panel .menu-block{
+    background-color: white;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+
+}
+
+.side-panel ul{
+    padding: 0;
+    transition: all 0.2s ease;
+}
+.side-panel li{
+    padding: 0rem 1rem;
+    box-sizing: border-box;
+    height: 5rem;
+    margin-top: 1rem;
+    list-style-type: none;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+.closeSidePanel li{
+    padding: 0rem 0rem;
+    transition: all 0.2s ease;
+}
+.closeSidePanel .search-box{
+   padding-left: 0.5rem;
+   cursor: pointer;
+   padding-right: 0;
+   transition: all 0.2s ease;
+}
+.closeSidePanel .search-box input{
+    opacity: 0;
+    transition: all 0.2s ease;
+}
+.search-box{
+    background-color:#18122B;
+}
+.search-box input{
+    height: 100%;
+    border: none;
+    background-color: #18122B;
+    color: white;
+    font-weight: 900;
+    width: 100%;
+    outline: none;
+}
+.side-panel .menu-block .menu li a{
+    text-decoration: none;
+    display: flex;
+    height: 100%;
+    width: 100%;
+
+    align-items: center;
+    gap: 2rem;
+    transition: all 0.3s ease;
+    padding: 0rem 1rem;
+    box-sizing: border-box;
+}
+.closeSidePanel .menu-block .menu li a{
+    padding: 0rem 0.5rem;
+    transition: all 0.2s ease;
+}
+.side-panel .menu-block .menu li a:hover{
+    transform: scale(0.9);
+    /* background-color: #18122B; */
+    background-color: #D8D9CF;
+    border-radius: 10px;
+    color: white;
+}
+.side-panel .menu-block .menu li .icons{
+    font-size: 2.5rem;
+
+    color: #18122B;
+}
+.side-panel .menu-block .menu li .nav-text{
+    font-size: 2.3rem;
+    font-weight: 500;
+    /* text-decoration: underline; */
+    color: #18122B;
+    text-align: center;
+}
+#searchIcon{
+    color: white;
+    font-size: 2rem;
+}
+.bottom-content{
+    height: 10rem;
+}
+
+ .bottom-content li a{ /*.active*/
+    text-decoration: none;
+    color: white;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    transition: all 0.3s ease;
+    padding: 0rem 1rem;
+    box-sizing: border-box;
+}
+.bottom-content li a i{
+    font-size: 2.5rem;
+}
+.bottom-content li a span{
+    font-size: 2.5rem;
+}
+.bottom-content li a:hover{  /*.active*/
+ transform: scale(1.1);
+}
+  /*=============================
+  css for side panel ends here
+  ===========================*/
+
+
+
+
+/*=============================
+  responsiveness css veteran added
+  ===========================*/
+
+  @media screen and (max-width:760px) {
+    html{
+        font-size:55% ;
+        font-weight: 700;
+    }
+    .layout header{
+        font-size: 5rem;
+        font-weight: 900;
+    }
+    .side-panelSection .side-panel{
+    height: 55rem ;
+      
+    }
+    .side-panelSection .side-panel .toggler i{
+        font-size: 3rem;
+    }
+    .side-panelSection .side-panel .toggler span{
+        font-size: 2.4rem;
+        font-weight: 500;
+
+    }
+    .side-panel .menu-block .menu li .icons{
+        font-size: 2.1rem;
+    }
+    .side-panel .menu-block .menu li .nav-text{
+        font-size: 2rem;
+    }
+    
+}
+
+
+
+@media (max-width:700px) {
+/* 
+    *{
+    check about this
+      font-size: 0.75rem;
+    } */
+    .layout header{
+        font-size: 5rem;
+        font-weight: 900;
+    }
+    html{
+        font-size:55% ;
+        font-weight: 700;
+    }
+    footer{
+        font-size: 1.5rem;
+        padding: 2rem;
+    }
+}

@@ -330,7 +330,7 @@ css for the block section ends here
     
     .row{
         grid-template-columns: repeat(auto-fit,minmax(60%,1fr));
-        padding: 6rem 8rem;   /*padding and boxsizing added now*/
+        padding: 6rem 10rem;   /*padding and boxsizing added now*/
         margin: auto auto;
         gap: 1rem;
         box-sizing: border-box;

@@ -53,7 +53,7 @@ const checkWIn = () => {
             boxes[e[1]].style.backgroundColor="black";
             boxes[e[2]].style.backgroundColor="black";
             boxes.style.pointerEvents="none";
-
+            window.navigator.vibrate(300);
         }
     })
 }

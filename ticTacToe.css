@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Castoro+Titling&family=IBM+Plex+Sans:wght@600&family=Poppins&family=Prompt&family=Raleway&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    box-sizing: border-box;
+}
+
+.logo {
+    height: 8vh;
+    position: relative;
+    width: 100%;
+    background-color: rgb(8, 6, 49);
+    display: flex;
+    align-items: center;
+    color: white;
+    letter-spacing: 5px;
+    font-size: 3vh;
+    padding-left: 2vh;
+    font-weight: 900;
+}
+
+.game-container {
+    height: 92vh;
+    position: relative;
+    width: 100%;
+    background: url("https://wallpaperaccess.com/full/1215681.jpg");
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 20vh);
+    width: 50%;
+    padding: 5rem;
+}
+
+.box {
+    font-size: 10vh;
+    color: white;
+    border: 3px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.box:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+    transform: scale(1.02);
+}
+
+.game-info {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    justify-content: center;
+    color: white;
+    font-size: 2.7vh;
+}
+
+.game-info:hover #gameHeader {
+    animation: change 3s linear infinite;
+
+}
+
+@keyframes change {
+    0% {
+        color: orange;
+    }
+
+    25% {
+        color: rgb(211, 64, 64);
+    }
+
+    50% {
+        color: pink;
+    }
+
+    75% {
+        color: white;
+    }
+
+    100% {
+        color: yellow;
+    }
+}
+
+.bl-0 {
+    border-left: 0px;
+}
+
+.br-0 {
+    border-right: 0px;
+}
+
+.bt-0 {
+    border-top: 0px;
+}
+
+.bb-0 {
+    border-bottom: 0px;
+}
+
+.reset {
+    width: 100%;
+    height: 6%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+}
+
+#resetButton {
+    width: 25%;
+    font-size: 3vh;
+    height: 100%;
+    cursor: pointer;
+    border-radius: 10px;
+    color: black;
+    font-weight: 800;
+    border: 2px solid white;
+    animation: buttonColor 3s linear  infinite ;
+    transition: all 0.3s ease;
+}
+#resetButton:hover{
+    transform: scale(1.05);
+    
+}
+#winGIf{
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    display: none;
+}
+@keyframes buttonColor {
+    0%{
+        background-color: pink;
+    }
+    25%{
+        background-color: rgb(244, 218, 169);
+    }
+    50%{
+        background-color: rgb(254, 254, 254);
+        
+    }
+    75%{
+        background-color: rgb(254, 191, 255);
+    }
+    100%{
+        background-color: pink;
+    }
+}
+
+@media (max-width:760px) {
+    .game-container {
+        flex-direction: column;
+    }
+
+    .game-grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 20vh);
+        padding: 1rem;
+        box-sizing: border-box;
+        width: 100%;
+    }
+    #turnTextInfo{
+        font-size: 2.3vh;
+    }
+    .box {
+        font-size: 7vh;
+    }
+    .reset{
+        height: 20%;
+    }
+    .game-info {
+        width: 100%;
+        font-size: 1.2vh;
+        height: 100%;
+        gap: 1rem;
+    }
+    #winGIf{
+        top: 90%;
+        left: 76%;
+    }
+    #winGIf img{
+        width: 80%;
+        height: 50%;
+    }
+}

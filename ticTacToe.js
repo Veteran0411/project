@@ -1,19 +1,22 @@
 const playAudio = new Audio("https://files.gospeljingle.com/uploads/music/2023/02/The_Weeknd_-_Reminder.mp3");
 const endAudio =new Audio("")
 const winGif = document.getElementById("winGIf");
-
+const gameGrid=document.getElementsByClassName("game-grid");
 const body = document.body;
 body.addEventListener('click', () => {
     playAudio.play();
     winGif.style.display = "block";
 })
 let Turn = "X";
-let gameOver = false;
+let gameOver = false; 
+
 // function to change the turn between players
 const changeTurn = () => {
     return Turn === "X" ? "O" : "X";
 }
 //Game Logic
+//insert the value of turn in the clicked box if box is empty 
+
 let boxes = document.getElementsByClassName("box");           //selected all the boxes from the grid
 Array.from(boxes).forEach(element => {                        // applied forEach loop to each box in grid 
     let boxText = element.querySelector('.box-text');      // selecting the text of the element being selected
@@ -52,7 +55,7 @@ const checkWIn = () => {
             boxes[e[0]].style.backgroundColor="black";
             boxes[e[1]].style.backgroundColor="black";
             boxes[e[2]].style.backgroundColor="black";
-            boxes.style.pointerEvents="none";
+            gameGrid[0].style.pointerEvents="none";
             window.navigator.vibrate(300);
         }
     })
